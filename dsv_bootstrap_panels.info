@@ -1,0 +1,6 @@
+name = DSV Bootstrap panels
+description = Panel's layouts using the Bootstrap layout system as a base.
+package = Panels
+dependencies[] = panels
+core = 7.x
+version = 7.x-0.1
