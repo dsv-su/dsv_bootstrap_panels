@@ -1,8 +1,5 @@
 <div <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="row">
-    <div class="col-sm-3 content_left">
-      <?php print $content['left']; ?>
-    </div>
 
     <div class="col-sm-9 content_middle_top">
       <?php print $content['middle_top']; ?>
@@ -16,7 +13,10 @@
           <?php print $content['middle_right']; ?>
         </div>
       </div>
+    </div>
 
+    <div class="col-sm-3 content_left">
+      <?php print $content['left']; ?>
     </div>
   </div>
 </div>
