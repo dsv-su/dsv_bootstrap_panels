@@ -8,3 +8,11 @@ function dsv_bootstrap_panels_ctools_plugin_directory($module, $plugin) {
     return 'plugins/layouts';
   }
 }
+
+function dsv_bootstrap_panels_form_article_node_form_alter(&$form, &$form_state, $form_id) {
+	foreach ($form['field_news_category']['und']['#options'] as $key => $term) {
+		if ($term == 'Anslagstavlan') {
+			$form['field_news_category']['und']['#options'][$key] .= ' ('.t('this category will not be emailed').')';
+		}
+	}
+}
