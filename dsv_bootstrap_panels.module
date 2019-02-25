@@ -12,9 +12,11 @@ function dsv_bootstrap_panels_ctools_plugin_directory($module, $plugin) {
 function dsv_bootstrap_panels_node_presave($node) {
 	// Anslagstavlan has tid = 56
 	// We enable commenting for this term
-	if (count($node->field_news_category['und']) == 1 && $node->field_news_category['und'][0]['tid'] == 56) {
-		$node->comment = 2;
-	} else {
-		$node->comment = 1;
+	if ($node->type == 'article') {
+		if (count($node->field_news_category['und']) == 1 && $node->field_news_category['und'][0]['tid'] == 56) {
+			$node->comment = 2;
+		} else {
+			$node->comment = 1;
+		}
 	}
 }
