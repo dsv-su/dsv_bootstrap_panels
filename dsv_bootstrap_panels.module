@@ -19,4 +19,16 @@ function dsv_bootstrap_panels_node_presave($node) {
 			$node->comment = 1;
 		}
 	}
+
+	// Handle 'email this article'
+	if (isset($node->field_massemail['und']) && $node->field_massemail['und'][0]['value'] == 1) {
+		$node->subscriptions_notify = 1;
+	} else {
+		$node->subscriptions_notify = 0;
+	}
+
+	// Viktigt are always emailed
+	if ($node->field_news_category['und'][0]['tid'] == 54) {
+		$node->subscriptions_notify = 1;
+	}
 }
