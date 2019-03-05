@@ -28,7 +28,7 @@ function dsv_bootstrap_panels_node_presave($node) {
 	}
 
 	// Viktigt are always emailed
-	if ($node->field_news_category['und'][0]['tid'] == 54) {
+	if (isset($node->field_news_category) and $node->field_news_category['und'][0]['tid'] == 54) {
 		$node->subscriptions_notify = 1;
 	}
 }
